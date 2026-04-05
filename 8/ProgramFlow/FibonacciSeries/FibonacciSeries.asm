@@ -1,0 +1,180 @@
+//Bootstrap
+@256
+D=A
+@SP
+M=D
+// ( PUSH, ARGUMENT, 1 )
+@ARG
+A=M+1
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( POP, POINTER, 1 )
+@SP
+AM=M-1
+D=M
+@THAT
+M=D
+// ( PUSH, CONSTANT, 0 )
+@SP
+AM=M+1
+A=A-1
+M=0
+// ( POP, THAT, 0 )
+@SP
+AM=M-1
+D=M
+@THAT
+A=M
+M=D
+// ( PUSH, CONSTANT, 1 )
+@SP
+AM=M+1
+A=A-1
+M=1
+// ( POP, THAT, 1 )
+@SP
+AM=M-1
+D=M
+@THAT
+A=M+1
+M=D
+// ( PUSH, ARGUMENT, 0 )
+@ARG
+A=M
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 2 )
+@SP
+AM=M+1
+A=A-1
+M=1
+M=M+1
+// ( SUB )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=M-D
+// ( POP, ARGUMENT, 0 )
+@SP
+AM=M-1
+D=M
+@ARG
+A=M
+M=D
+// ( LABEL, LOOP )
+(BOOTSTRAP$LOOP)
+// ( PUSH, ARGUMENT, 0 )
+@ARG
+A=M
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( IF_GOTO, COMPUTE_ELEMENT )
+@SP
+AM=M-1
+D=M
+@BOOTSTRAP$COMPUTE_ELEMENT
+D;JNE
+// ( GOTO, END )
+@BOOTSTRAP$END
+0;JMP
+// ( LABEL, COMPUTE_ELEMENT )
+(BOOTSTRAP$COMPUTE_ELEMENT)
+// ( PUSH, THAT, 0 )
+@THAT
+A=M
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, THAT, 1 )
+@THAT
+A=M+1
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( ADD )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=D+M
+// ( POP, THAT, 2 )
+@SP
+AM=M-1
+D=M
+@THAT
+A=M+1
+A=A+1
+M=D
+// ( PUSH, POINTER, 1 )
+@THAT
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 1 )
+@SP
+AM=M+1
+A=A-1
+M=1
+// ( ADD )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=D+M
+// ( POP, POINTER, 1 )
+@SP
+AM=M-1
+D=M
+@THAT
+M=D
+// ( PUSH, ARGUMENT, 0 )
+@ARG
+A=M
+D=M
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 1 )
+@SP
+AM=M+1
+A=A-1
+M=1
+// ( SUB )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=M-D
+// ( POP, ARGUMENT, 0 )
+@SP
+AM=M-1
+D=M
+@ARG
+A=M
+M=D
+// ( GOTO, LOOP )
+@BOOTSTRAP$LOOP
+0;JMP
+// ( LABEL, END )
+(BOOTSTRAP$END)
+// End of code loop
+(EOC)
+@EOC
+0;JMP

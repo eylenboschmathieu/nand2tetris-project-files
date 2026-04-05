@@ -1,0 +1,319 @@
+//Bootstrap
+@256
+D=A
+@SP
+M=D
+// ( PUSH, CONSTANT, 17 )
+@17
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 17 )
+@17
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( EQ )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$EQ.0
+D;JEQ
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$EQ.0)
+// ( PUSH, CONSTANT, 17 )
+@17
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 16 )
+@16
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( EQ )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$EQ.1
+D;JEQ
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$EQ.1)
+// ( PUSH, CONSTANT, 16 )
+@16
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 17 )
+@17
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( EQ )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$EQ.2
+D;JEQ
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$EQ.2)
+// ( PUSH, CONSTANT, 892 )
+@892
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 891 )
+@891
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( LT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$LT.0
+D;JLT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$LT.0)
+// ( PUSH, CONSTANT, 891 )
+@891
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 892 )
+@892
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( LT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$LT.1
+D;JLT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$LT.1)
+// ( PUSH, CONSTANT, 891 )
+@891
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 891 )
+@891
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( LT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$LT.2
+D;JLT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$LT.2)
+// ( PUSH, CONSTANT, 32767 )
+@32767
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 32766 )
+@32766
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( GT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$GT.0
+D;JGT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$GT.0)
+// ( PUSH, CONSTANT, 32766 )
+@32766
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 32767 )
+@32767
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( GT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$GT.1
+D;JGT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$GT.1)
+// ( PUSH, CONSTANT, 32766 )
+@32766
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 32766 )
+@32766
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( GT )
+@SP
+AM=M-1
+D=M
+A=A-1
+D=M-D
+M=-1
+@BOOTSTRAP$GT.2
+D;JGT
+@SP
+A=M-1
+M=0
+(BOOTSTRAP$GT.2)
+// ( PUSH, CONSTANT, 57 )
+@57
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 31 )
+@31
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( PUSH, CONSTANT, 53 )
+@53
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( ADD )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=D+M
+// ( PUSH, CONSTANT, 112 )
+@112
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( SUB )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=M-D
+// ( NEG )
+@SP
+A=M-1
+M=-M
+// ( AND )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=D&M
+// ( PUSH, CONSTANT, 82 )
+@82
+D=A
+@SP
+AM=M+1
+A=A-1
+M=D
+// ( OR )
+@SP
+AM=M-1
+D=M
+A=A-1
+M=D|M
+// ( NOT )
+@SP
+A=M-1
+M=!M
+// End of code loop
+(EOC)
+@EOC
+0;JMP
